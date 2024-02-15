@@ -17,8 +17,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void createUser(User user){
-        userRepository.save(user);
+    public User createUser(User user){
+       return  userRepository.save(user);
     }
 
     public List<User> findAllUsers(){
@@ -26,8 +26,9 @@ public class UserService {
 
     }
 
-    public void updateUser(User user){
-        userRepository.save(user);
+    public User updateUser(User user){
+        return
+                userRepository.save(user);
     }
 
     public void deleteUser(User user){
