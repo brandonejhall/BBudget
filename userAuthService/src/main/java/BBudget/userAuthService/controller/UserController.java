@@ -1,7 +1,7 @@
 package BBudget.userAuthService.controller;
 
 import BBudget.userAuthService.model.User;
-import BBudget.userAuthService.service.UserService;
+import BBudget.userAuthService.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,27 +13,27 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserService userService;
+    private final UserServiceImpl userServiceImpl;
 
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(UserServiceImpl userServiceImpl) {
+        this.userServiceImpl = userServiceImpl;
     }
 
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        User newUser = userService.createUser(user);
+        User newUser = userServiceImpl.createUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(){
-        List<User> users = userService.findAllUsers();
+        List<User> users = userServiceImpl.findAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
 
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/api/users")
     public ResponseEntity<String> HelloWorld(){
 
         return new ResponseEntity<>("Hello World",HttpStatus.OK);
