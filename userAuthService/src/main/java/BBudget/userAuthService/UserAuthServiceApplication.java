@@ -25,7 +25,9 @@ public class UserAuthServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UserAuthServiceApplication.class, args);
 
-		String connectionString = "mongodb+srv://brandonejh7:bgAgRoySG4s9FNgR@bbudget.icsytzt.mongodb.net/?retryWrites=true&w=majority";
+		/*
+		String connectionString =
+				"mongodb+srv://bbudget_useradmin:SlwPbDBQaDMoXDsH@users.5drygkj.mongodb.net/?retryWrites=true&w=majority&appName=User";
 		ServerApi serverApi = ServerApi.builder()
 				.version(ServerApiVersion.V1)
 				.build();
@@ -43,7 +45,9 @@ public class UserAuthServiceApplication {
 			} catch (MongoException e) {
 				e.printStackTrace();
 			}
-		}
+
+
+		}*/
 	}
 
 }
